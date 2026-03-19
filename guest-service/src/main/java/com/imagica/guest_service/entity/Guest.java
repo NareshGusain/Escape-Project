@@ -1,9 +1,8 @@
 package com.imagica.guest_service.entity;
 
 import jakarta.persistence.*;
-import org.springframework.data.annotation.Id;
 
-import javax.persistence.*;
+//import javax.persistence.*;
 import java.time.LocalDateTime;
 
 @Entity

@@ -21,7 +21,7 @@ import com.imagica.guest_service.repository.GuestRepository;
 @Service
 public class GuestService {
     private static final Logger logger = LoggerFactory.getLogger(GuestService.class);
-    private final GuestRepository guestRepository;
+    private GuestRepository guestRepository;
 
     public GuestService(GuestRepository guestRepository) {
         this.guestRepository = guestRepository;

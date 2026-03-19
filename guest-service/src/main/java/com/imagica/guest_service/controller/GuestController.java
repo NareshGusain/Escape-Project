@@ -1,5 +1,7 @@
 package com.imagica.guest_service.controller;
 
+import java.util.Optional;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
@@ -25,7 +27,8 @@ import com.imagica.guest_service.service.GuestService;
 @RequestMapping("api/guests")
 public class GuestController {
         private static final Logger logger = LoggerFactory.getLogger(GuestController.class);
-        private final GuestService guestService;
+        private GuestService guestService;
+        
 
         public GuestController(GuestService guestService) {
                 this.guestService = guestService;
