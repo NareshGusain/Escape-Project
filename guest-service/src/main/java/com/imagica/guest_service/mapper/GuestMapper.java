@@ -15,6 +15,7 @@ public class GuestMapper {
         guest.setLastName(dto.getLastName());
         guest.setEmail(dto.getEmail());
         guest.setPhone(dto.getPhone());
+        guest.setPassword(dto.getPassword());
         return guest;
     }
 
@@ -25,6 +26,7 @@ public class GuestMapper {
         dto.setLastName(guest.getLastName());
         dto.setEmail(guest.getEmail());
         dto.setPhone(guest.getPhone());
+        dto.setUserRole(guest.getUserRole());
         dto.setCreatedAt(guest.getCreatedAt() != null ? guest.getCreatedAt().format(formatter) : null);
         dto.setUpdatedAt(guest.getUpdatedAt() != null ? guest.getUpdatedAt().format(formatter) : null);
         return dto;
