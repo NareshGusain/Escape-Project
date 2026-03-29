@@ -15,6 +15,7 @@ public class GuestMapper {
         guest.setLastName(dto.getLastName());
         guest.setEmail(dto.getEmail());
         guest.setPhone(dto.getPhone());
+        guest.setPassword(dto.getPassword());
         return guest;
     }
 

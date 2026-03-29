@@ -39,6 +39,14 @@ public class GuestRequestDTO {
     @Pattern(regexp = "^\\d{10,15}$", message = "Phone must be 10-15 digits")
     private String phone;
 
+    @NotBlank(message = "Password is required")
+    @Size(min = 8, max = 64, message = "Password must be between 8 and 64 characters long")
+    @Pattern(
+            regexp = "^(?=.*[a-z])(?=.*[A-Z])(?=(?:.*\\d){2,})(?=.*[^a-zA-Z0-9])\\S{8,64}$",
+            message = "Password must contain at least one lowercase letter, one uppercase letter, at least two digits, one special character, and must not contain spaces"
+    )
+    private String password;
+
     // Getters and setters
 //    public String getFirstName() { return firstName; }
 //    public void setFirstName(String firstName) { this.firstName = firstName; }
