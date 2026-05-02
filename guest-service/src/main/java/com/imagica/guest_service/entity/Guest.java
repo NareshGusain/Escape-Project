@@ -1,22 +1,23 @@
 package com.imagica.guest_service.entity;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import jakarta.validation.constraints.*;
 
 //import javax.persistence.*;
 import java.time.LocalDateTime;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+import jakarta.persistence.UniqueConstraint;
 
 @Entity
 @Table(name = "guest", uniqueConstraints = {
         @UniqueConstraint(columnNames = "email"),
         @UniqueConstraint(columnNames = "phone")
 })
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
 public class Guest {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
