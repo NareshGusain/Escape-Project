@@ -1,4 +1,4 @@
-# Imagica Theme Park Management System
+# Theme Park Management System
 
 A production-style **microservices-based backend system** that simulates a theme park platform similar to Imagica.
 The system allows guests to browse shows, view schedules, book tickets, and complete payments through a distributed architecture.

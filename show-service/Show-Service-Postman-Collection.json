@@ -1,0 +1,272 @@
+{
+	"info": {
+		"_postman_id": "a1b2c3d4-e5f6-g7h8-i9j0-k1l2m3n4o5p6",
+		"name": "Show Service API",
+		"description": "Collection for testing Show Service Endpoints",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "1. Get All Shows",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8082/api/shows",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"api",
+						"shows"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "2. Get Show By ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8082/api/shows/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"api",
+						"shows",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "3. Get Schedules By Show ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8082/api/shows/1/schedules",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"api",
+						"shows",
+						"1",
+						"schedules"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "4. Get Seat Availability By Schedule ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8082/api/schedules/1/availability",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"api",
+						"schedules",
+						"1",
+						"availability"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "5. Create Show",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"Magic Show\",\n  \"description\": \"An amazing illusion show for all ages\",\n  \"durationMinutes\": 60,\n  \"category\": \"Entertainment\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8082/api/shows",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"api",
+						"shows"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "6. Update Show",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"Grand Magic Show\",\n  \"description\": \"An updated description for the magic show\",\n  \"durationMinutes\": 90,\n  \"category\": \"Entertainment\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8082/api/shows/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"api",
+						"shows",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "7. Create Show Schedule",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"showId\": 1,\n  \"showDate\": \"2026-05-01\",\n  \"startTime\": \"18:00:00\",\n  \"endTime\": \"19:00:00\",\n  \"totalSeats\": 100\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8082/api/schedules",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"api",
+						"schedules"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "8. Update Show Schedule",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"showId\": 1,\n  \"showDate\": \"2026-05-02\",\n  \"startTime\": \"20:00:00\",\n  \"endTime\": \"21:00:00\",\n  \"totalSeats\": 120\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8082/api/schedules/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"api",
+						"schedules",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "9. Create Seat Inventory",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"scheduleId\": 1,\n  \"availableSeats\": 100,\n  \"reservedSeats\": 0\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8082/api/seat-inventory",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"api",
+						"seat-inventory"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "10. Update Seat Inventory",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"scheduleId\": 1,\n  \"availableSeats\": 90,\n  \"reservedSeats\": 10\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8082/api/seat-inventory/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"api",
+						"seat-inventory",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
