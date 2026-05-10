@@ -11,7 +11,9 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
+import lombok.Data;
 
+@Data
 @Entity
 @Table(name = "booking_status_history")
 public class BookingStatusHistory {
@@ -27,7 +29,4 @@ public class BookingStatusHistory {
     private TicketBooking.BookingStatus status;
 
     private LocalDateTime updatedAt;
-
-    // Getters and setters
-    // ...
 }

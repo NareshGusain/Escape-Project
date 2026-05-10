@@ -1,5 +1,4 @@
-package com.imagica.guest_service.config;
-
+package com.imagica.show_service.config;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -13,7 +12,7 @@ public class SwaggerConfig {
     public OpenAPI customOpenAPI() {
         return new OpenAPI()
                 .info(new Info()
-                        .title("Guest Service API")
+                        .title("Show Service API")
                         .version("1.0")
                         .description("API documentation for the Guest Service in Great Escape Project"));
     }

@@ -1,7 +1,9 @@
 package com.imagica.ticket_service.model;
 
 import jakarta.persistence.*;
+import lombok.Data;
 
+@Data
 @Entity
 @Table(name = "ticket")
 public class Ticket {
@@ -17,9 +19,6 @@ public class Ticket {
 
     @Enumerated(EnumType.STRING)
     private TicketStatus ticketStatus;
-
-    // Getters and setters
-    // ...
 
     public enum TicketStatus {
         CREATED,

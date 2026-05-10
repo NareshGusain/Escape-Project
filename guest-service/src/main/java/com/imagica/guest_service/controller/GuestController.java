@@ -39,7 +39,7 @@ public class GuestController {
      */
     @PostMapping
     public ResponseEntity<ApiResponse<GuestResponseDTO>> createGuest(
-            @javax.validation.Valid @RequestBody GuestRequestDTO request) {
+            @jakarta.validation.Valid @RequestBody GuestRequestDTO request) {
         logger.info("API: Create guest called for email: {}", request.getEmail());
         GuestResponseDTO response = guestService.createGuest(request);
         ApiResponse<GuestResponseDTO> apiResponse =
@@ -68,7 +68,7 @@ public class GuestController {
      * Update guest by id.
      */
         @PutMapping("/{id}")
-        public ResponseEntity<ApiResponse<GuestResponseDTO>> updateGuest(@PathVariable Long id, @RequestBody GuestRequestDTO request) {
+        public ResponseEntity<ApiResponse<GuestResponseDTO>> updateGuest(@PathVariable Long id, @jakarta.validation.Valid @RequestBody GuestRequestDTO request) {
                 logger.info("API: Update guest called for id: {}", id);
                 Optional<GuestResponseDTO> guestOpt = guestService.updateGuest(id, request);
                 ApiResponse<GuestResponseDTO> apiResponse;

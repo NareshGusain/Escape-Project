@@ -1,0 +1,88 @@
+{
+	"info": {
+		"_postman_id": "z1y2x3w4-v5u6-t7s8-r9q0-p1o2n3m4l5k6",
+		"name": "Ticket Service API",
+		"description": "Collection for testing Ticket Service Endpoints",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "1. Book Tickets",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"guestId\": 1,\n  \"scheduleId\": 1,\n  \"ticketCount\": 2\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8083/api/tickets/book",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8083",
+					"path": [
+						"api",
+						"tickets",
+						"book"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "2. Get Booking By ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8083/api/tickets/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8083",
+					"path": [
+						"api",
+						"tickets",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "3. Cancel Booking By ID",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8083/api/tickets/1/cancel",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8083",
+					"path": [
+						"api",
+						"tickets",
+						"1",
+						"cancel"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

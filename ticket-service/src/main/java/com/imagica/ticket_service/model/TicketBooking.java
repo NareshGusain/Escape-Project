@@ -1,9 +1,11 @@
 package com.imagica.ticket_service.model;
 
 import jakarta.persistence.*;
+import lombok.Data;
 import java.time.LocalDateTime;
 import java.util.List;
 
+@Data
 @Entity
 @Table(name = "ticket_booking")
 public class TicketBooking {
@@ -23,9 +25,6 @@ public class TicketBooking {
 
     @OneToMany(mappedBy = "booking", cascade = CascadeType.ALL)
     private List<Ticket> tickets;
-
-    // Getters and setters
-    // ...
 
     public enum BookingStatus {
         CREATED,
